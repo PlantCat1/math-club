@@ -1,0 +1,364 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{chessboard}
+\usepackage[margin=1.25in]{geometry}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[]
+
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}[]
+
+\newtheoremstyle{activity}
+  {\topsep}
+  {\topsep}
+  {\normalfont}
+  {}
+  {\bfseries}
+  {}
+  {\newline}
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+
+\theoremstyle{activity}
+\newtheorem{activity}{Activity}
+
+\newlist{parts}{enumerate}{1}
+\setlist[parts]{label=(\alph*), leftmargin=*}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{Math Club} - Introduction to Proofs}
+\rhead{10/06/2026}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\headheight}{25pt}
+
+\begin{document}
+
+\section{Importance of Proofs}
+
+In most high-school and early undergraduate math classes, facts are given to you as something that is true with little more said, but how do we distinguish these truths from lies? We use proofs.
+
+A proof can be viewed like a computer program. The program has to compile, it has to run, it must be logically sound in order for it to run.     However, a proof is much more than that. Proofs allow us to understand \emph{why} something is true, and that understanding is what makes math fun! Furthermore, proofs are convenient. For many propositions, one could manually go through the numerous possible examples and find that the statement is true for each one, but this removes from the deeper reasoning behind what is being proven. Additionally, doing so may be very tedious or even impossible.
+
+For example, imagine that we want to prove the statement ``The square of an odd number is an odd number''. We can first look at examples, and pretty quickly see that the statement appears to be true. However, we can't simply calculate every single example of this statement, as there are infinitely many odd numbers. Thus, we must use the properties of odd numbers and make a generalization from that.
+
+For any math to be useful, we must work from definitions that are exact and agreed upon. Unlike theorems, definitions don't have to be proven. Instead, theorems are built upon definitions, which are agreed upon to be true. Definitions are useful, as we can work from them to arrive at our desired result.
+
+For our desired theorem, the agreed upon definition to use is the following:
+
+\begin{definition}[Even]
+    An integer \(n\) is \textbf{even} if there exists an integer \(k \in \mathbb{Z}\) such that \(n = 2k\).
+\end{definition}
+
+\begin{definition}[Odd]
+    An integer \(n\) is \textbf{odd} if there exists an integer \(k \in \mathbb{Z}\) such that \(n = 2k + 1\).
+\end{definition}
+
+This definition is ideal, as it:
+  \begin{itemize}
+    \item Sets the boundary to apply only to integers
+    \item partitions all integers into being either even or odd with no in between
+    \item Provides us with variables and mathematical expressions that can be manipulated
+  \end{itemize}
+
+With these definitions, we can now rewrite the expression using variables and apply our definition. We can first assign a variable, $n$ to the number being squared. We can also rewrite the statement into an if-then statement: ``If $n$ is an odd integer, then $n^2$ is an odd integer''. Notice we can apply our definition, defining $n = 2a+1$, where $a$ is an integer. Now, we can perform algebraic manipulation on this expression.
+
+\begin{align*}
+    n^2 &= (2a + 1)^2 \\
+    &= (2a)^2 + 2(2a)(1) + (1)^2 \\
+    &= 4a^2 + 4a + 1 \\
+    &= 2(2a^2 + 2a) + 1
+\end{align*}
+
+We now have a number of the form $2k + 1$ where $k = 2a^2 + 2a$. So as long as $k$ is an integer, $n^2$ must be an odd number. For this, we use an \emph{axiom}. An axiom is a statement that is taken to be true to serve as a premise or starting point.
+
+An applicable axiom for this is regarding the \emph{closure} of the integers. Closure in this case means that operations performed on integers result in an integer.
+
+With this, we have proved what we desired to prove. What do we call this result? In math, there are a few options described below:
+
+\begin{itemize}
+    \item A \emph{theorem} is an important result that has been proved.
+    \item A \emph{proposition} is a result that is less important than a theorem. It has also been proved.
+    \item A \emph{lemma} is typically a small result that is proved before a proposition or theorem, and is used to prove the following proposition or theorem.
+    \item A \emph{corollary} is a result that is proved after a proposition or theorem, and which follows quickly from the proposition or theorem. It is often a special case of the proposition or theorem.
+\end{itemize}
+
+These terms above are all for results that have been proven. On the other hand, a \emph{conjecture} is a statement that someone guesses to be true, although they are not yet able to prove or disprove it.
+
+\section{Activity Introduction}
+
+Supposed you have a chessboard and a bunch of dominoes. The dominoes are $2 \times 1$ such that they fully cover two squares of the chessboard. Our goal is to see under what conditions we are able to perfectly cover all $64$ squares of the chessboard.
+
+First, we must define what is means to perfectly cover a chessboard with dominoes.
+
+\begin{definition}
+    A \textit{perfect cover} of an $m \times n$ board with $2 \times 1$ dominoes is an arrangement of those dominoes on the chessboard with no squares left uncovered, and no dominoes stacked or left hanging off the end.
+\end{definition}
+
+Now, we formally write down the statement that we hope to prove. In this, we make sure to specify which size chessboard is being considered so that there is no ambiguity:
+
+\begin{proposition}
+    There exists a perfect cover of an $8 \times 8$ chessboard.
+\end{proposition}
+
+This proposition asserts that ``there exists'' a perfect cover. To say ``there exists'' something means that there is at least one example of it. Therefore, any proposition like this can be proven by simply presenting an example which satisfies the statement. Such as in the following:
+
+\begin{center}
+\begin{minipage}[t]{0.45\textwidth}
+    \centering
+    \chessboard[
+        smallboard,
+        showmover=false,
+        markstyle=border,
+        markregion=a1-a2, markregion=a3-a4, markregion=a5-a6, markregion=a7-a8,
+        markregion=b1-b2, markregion=b3-b4, markregion=b5-b6, markregion=b7-b8,
+        markregion=c1-c2, markregion=c3-c4, markregion=c5-c6, markregion=c7-c8,
+        markregion=d1-d2, markregion=d3-d4, markregion=d5-d6, markregion=d7-d8,
+        markregion=e1-e2, markregion=e3-e4, markregion=e5-e6, markregion=e7-e8,
+        markregion=f1-f2, markregion=f3-f4, markregion=f5-f6, markregion=f7-f8,
+        markregion=g1-g2, markregion=g3-g4, markregion=g5-g6, markregion=g7-g8,
+        markregion=h1-h2, markregion=h3-h4, markregion=h5-h6, markregion=h7-h8
+    ]
+\end{minipage}
+\begin{minipage}[t]{0.45\textwidth}
+    \centering
+    \chessboard[
+        smallboard,
+        showmover=false,
+        markstyle=border,
+        markregion=a1-b1, markregion=c1-d1, markregion=e1-f1, markregion=g1-h1,
+        markregion=a2-b2, markregion=c2-d2, markregion=e2-f2, markregion=g2-h2,
+        markregion=a3-b3, markregion=c3-d3, markregion=e3-f3, markregion=g3-h3,
+        markregion=a4-b4, markregion=c4-d4, markregion=e4-f4, markregion=g4-h4,
+        markregion=a5-b5, markregion=c5-d5, markregion=e5-f5, markregion=g5-h5,
+        markregion=a6-b6, markregion=c6-d6, markregion=e6-f6, markregion=g6-h6,
+        markregion=a7-b7, markregion=c7-d7, markregion=e7-f7, markregion=g7-h7,
+        markregion=a8-b8, markregion=c8-d8, markregion=e8-f8, markregion=g8-h8
+    ]
+\end{minipage}
+\end{center}
+
+\begin{proposition}
+    If one crosses out the top-left square of an $8 \times 8$ chessboard, the remaining squares cannot be perfectly covered by dominoes.
+\end{proposition}
+
+\begin{center}
+    \chessboard[
+        showmover=false,
+        pgfstyle=cross,
+        markfield={a8}]
+\end{center}
+
+\begin{proof}
+    Since each domino covers $2$ squares and the dominoes are non-overlapping, if one places our $k$ dominoes on the board, then they will cover $2k$ squares, which is always an even number.
+    
+    Therefore, a perfect cover can only cover an \emph{even} number of squares. Notice though, that the board has $63$ remaining squares, which is an \emph{odd} number. Thus, it cannot be perfectly covered.
+\end{proof}
+
+Note that now that the proposition has been proven, it can be considered a theorem.
+
+\begin{proposition}
+    If one crosses out the top-left and bottom-right squares of an $8 \times 8$ chessboard, the remaining squares cannot be perfectly covered by dominoes.
+\end{proposition}
+
+We have an even number of squares, so there's no problem there. We can experiment with arrangements of dominoes and see any patterns that form.
+
+If this proves too hard, trying a smaller example could make it easier. For example, we can explore this problem with a $4 \times 4$ chessboard and see if our results can be applied to the $8 \times 8$ case.
+
+\begin{center}
+\begin{minipage}[t]{0.45\textwidth}
+    \centering
+    \chessboard[
+        showmover=false,
+        pgfstyle=cross,
+        markfield={a8, h1}]
+\end{minipage}%
+\begin{minipage}[t]{0.45\textwidth}
+    \centering
+    \chessboard[
+        showmover=false,
+        maxfield=d4,
+        pgfstyle=cross,
+        markfield={a4, d1}]
+\end{minipage}
+\end{center}
+
+\begin{proof}[Proof 1]
+    Observe that the chessboard has $62$ remaining squares, and since every domino covers two squares, if a perfect cover did exist it would require
+    \[
+    \frac{62}{2} = 31 \text{ dominoes}.
+    \]
+    Also observe that each domino covers exactly one white square and one black square. Thus, whenever $31$ non-overlapping dominoes are placed on an $8 \times 8$ chessboard, they will collectively cover $31$ white squares and $31$ black squares.
+
+    Next, observe that since both of the crossed-out squares are white squares, the remaining squares consist of $30$ white squares and $32$ black squares. Therefore, it is impossible to have $31$ dominoes cover these $62$ squares.
+\end{proof}
+
+\begin{proof}[Proof 2]
+    We first assume there exists a perfect cover and begin placing dominoes. At the start, there are $62$ squares --- $32$ black and $30$ white. After placing the first domino, no matter where it's placed, there will be $31$ black squares and $29$ white squares left. After placing the second domino, there will be $30$ black squares and $28$ white squares left. This process can be repeated until the $30\textsuperscript{th}$ domino is placed, at which point there will be $2$ black squares and $0$ white squares left.
+
+    But since every domino must cover up $1$ black square and $1$ white square, and there are only $2$ black squares left, the final domino cannot possibly be placed. This contradicts our assumption that there does exist a perfect cover.
+
+    Thus, a perfect cover cannot exist for this case.
+\end{proof}
+
+\section{Activity}
+
+\begin{activity}
+    Suppose that $m$ and $n$ are positive odd integers.
+    \begin{parts}
+        \item Does there exist a perfect cover of the $m \times n$ chessboard?
+        \item If I remove $1$ sqaure from an $m \times n$ chessboard, will it have a perfect cover?
+    \end{parts}
+\end{activity}
+
+\begin{activity}
+    The game \emph{Tetris} is played with five different shapes --- the five shapes that can be obtained by piecing together four unit squares:
+
+    For the questions below, we also allow these pieces to be ``flipped over.''
+    \begin{parts}
+        \item Is it possible to perfectly cover a $4 \times 5$ chessboard using each of these shapes exactly once? Prove that it is impossible, or show by example that it is possible.
+        \item Is it possible to perfectly cover a $8 \times 5$ chessboard using each of these shapes exactly twice? Prove that it is impossible, or show by example that it is possible.
+    \end{parts}
+\end{activity}
+
+\begin{activity}
+    If I remove two squares of different colors from an $8 \times 8$ chessboard, must the result have a perfect cover?
+\end{activity}
+
+Asking interesting questions is just as important as answering them. What other questions do you have regarding perfect covers of a chessboard? Think of variations on the size or shape of the board, dominoes of different shapes, or different regions of the board marked out.
+
+\newpage
+
+\section*{$8 \times 8$ Board}
+
+\textit{Instructions: Use the board below alongside the printable cutouts on the next page to experiment with the activity problems.}
+
+\newlength{\squarelen}
+\setlength{\squarelen}{1.1cm}
+
+\begin{center}
+    \setchessboard{boardfontsize=\squarelen, showmover=false}
+    \chessboard
+\end{center}
+
+\newpage
+\section*{Printable Pieces}
+
+\textit{Instructions: Cut out the grid pieces below along the dashed lines. The dominoes and blocker squares are arranged continuously so you can cut straight across.}
+
+\vspace{1em}
+
+\setlength{\squarelen}{1cm}
+
+\begin{center}
+\begin{minipage}[t]{0.56\textwidth}
+\subsection*{Dominoes}
+\vspace{0.3em}
+\begin{tikzpicture}[x=\squarelen, y=\squarelen, line width=0.8pt]
+    % Outer border for 8x8 domino block
+    \draw[fill=gray!10] (0,0) rectangle (8,8);
+    
+    % Horizontal cutting lines between rows
+    \foreach \y in {0, 1, 2, 3, 4, 5, 6, 7, 8} {
+        \draw[] (0,\y) -- (8,\y);
+    }
+
+    % Vertical cutting lines between dominoes (every 2 units)
+    \foreach \x in {0, 2, 4, 6, 8} {
+        \draw[] (\x,0) -- (\x,8);
+    }
+
+    % Inner fold / center line of each domino
+    \foreach \x in {1, 3, 5, 7} {
+        \draw[dashed] (\x,0) -- (\x,8);
+    }
+\end{tikzpicture}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.38\textwidth}
+\subsection*{Blocker Pieces}
+\vspace{0.3em}
+\begin{tikzpicture}[x=\squarelen, y=\squarelen, line width=0.8pt]
+    % Draw 16 single 1x1 "X" blocker squares in a 2x8 continuous vertical strip (or 4x4)
+    \foreach \x in {0, 1, 2, 3} {
+        \foreach \y in {0, 1, 2, 3} {
+            % Outer dashed line for cutting
+            \draw[dashed, fill=red!15] (\x, \y+2) rectangle (\x+1, \y+3);
+            
+            % Red X inside each square
+            \draw[line width=1.5pt, red!80!black] (\x+0.2, \y+2.2) -- (\x+0.8, \y+2.8);
+            \draw[line width=1.5pt, red!80!black] (\x+0.2, \y+2.8) -- (\x+0.8, \y+2.2);
+        }
+    }
+\end{tikzpicture}
+\end{minipage}
+\end{center}
+
+\vspace{1em}
+
+\subsection*{Tetraminos}
+\vspace{0.3em}
+
+\begin{center}
+\begin{tikzpicture}[x=\squarelen, y=\squarelen, line width=0.8pt]
+    % --- ROW 1 ---
+    % I-Piece 1
+    \scope[shift={(0,6)}]
+        \draw[dashed, fill=blue!15] (0,0) grid (4,1) (0,0) rectangle (4,1);
+    \endscope
+    % I-Piece 2
+    \scope[shift={(5,6)}]
+        \draw[dashed, fill=blue!15] (0,0) grid (4,1) (0,0) rectangle (4,1);
+    \endscope
+    % O-Piece 1
+    \scope[shift={(10,5)}]
+        \draw[dashed, fill=yellow!20] (0,0) grid (2,2) (0,0) rectangle (2,2);
+    \endscope
+    % O-Piece 2
+    \scope[shift={(13,5)}]
+        \draw[dashed, fill=yellow!20] (0,0) grid (2,2) (0,0) rectangle (2,2);
+    \endscope
+
+    % --- ROW 2 ---
+    % T-Piece 1
+    \scope[shift={(0,2)}]
+        \draw[dashed, fill=purple!20] (0,0) -- (3,0) -- (3,1) -- (2,1) -- (2,2) -- (1,2) -- (1,1) -- (0,1) -- cycle;
+        \draw[dashed] (1,0)--(1,1) (2,0)--(2,1) (1,1)--(2,1);
+    \endscope
+    % T-Piece 2
+    \scope[shift={(4,2)}]
+        \draw[dashed, fill=purple!20] (0,0) -- (3,0) -- (3,1) -- (2,1) -- (2,2) -- (1,2) -- (1,1) -- (0,1) -- cycle;
+        \draw[dashed] (1,0)--(1,1) (2,0)--(2,1) (1,1)--(2,1);
+    \endscope
+    % L-Piece 1
+    \scope[shift={(8,2)}]
+        \draw[dashed, fill=orange!20] (0,0) -- (3,0) -- (3,2) -- (2,2) -- (2,1) -- (0,1) -- cycle;
+        \draw[dashed] (1,0)--(1,1) (2,0)--(2,1) (2,1)--(3,1);
+    \endscope
+    % L-Piece 2
+    \scope[shift={(12,2)}]
+        \draw[dashed, fill=orange!20] (0,0) -- (3,0) -- (3,2) -- (2,2) -- (2,1) -- (0,1) -- cycle;
+        \draw[dashed] (1,0)--(1,1) (2,0)--(2,1) (2,1)--(3,1);
+    \endscope
+
+    % --- ROW 3 ---
+    % S-Piece 1
+    \scope[shift={(3,-1.5)}]
+        \draw[dashed, fill=green!20] (0,0) -- (2,0) -- (2,1) -- (3,1) -- (3,2) -- (1,2) -- (1,1) -- (0,1) -- cycle;
+        \draw[dashed] (1,0)--(1,1) (1,1)--(2,1) (2,1)--(2,2);
+    \endscope
+    % S-Piece 2
+    \scope[shift={(9,-1.5)}]
+        \draw[dashed, fill=green!20] (0,0) -- (2,0) -- (2,1) -- (3,1) -- (3,2) -- (1,2) -- (1,1) -- (0,1) -- cycle;
+        \draw[dashed] (1,0)--(1,1) (1,1)--(2,1) (2,1)--(2,2);
+    \endscope
+\end{tikzpicture}
+\end{center}
+
+\end{document}

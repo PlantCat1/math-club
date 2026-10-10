@@ -1,0 +1,33 @@
+\documentclass{article}
+
+\usepackage[margin=1.5in]{geometry}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Problems of the Week}} \\ 10/06/2026
+\end{center}
+
+These questions are an extension to what was discussed in the meeting this week. The goal with these questions is to build to an abstract generalization using the patterns we saw.
+
+\textbf{Question 1} \\
+Suppose $k$ is a positive integer. Prove that if $k \mid m$ or $k \mid n$, then an $m \times n$ chessboard can be perfectly covered by $1 \times k$ dominoes.
+\textit{Hint:} Assume $k \mid m$ without loss of generality, as an $m \times n$ board can be rotated. Try slicing the board into $n$ separate $m \times 1$ columns.
+
+\textbf{Question 2} \\
+Suppose you want to tile a single $1 \times L$ strip using two types of tiles: $1 \times a$ tiles and $1 \times b$ tiles. Show that if $L = xa + yb$ for non-negative integers $x, y \ge 0$, then a $1 \times L$ strip can always be covered by these tiles.
+Can a $1 \times 11$ strip be tiled using $1 \times 3$ and $1 \times 4$ tiles? What about a $1 \times 10$ strip?
+\textit{Hint:} Lay $x$ tiles of length $a$ end-to-end, followed by $y$ tiles of length $b$.
+
+\textbf{Question 3} \\
+Suppose you have $a \times b$ rectangular tiles (placed horizontally as $a \times b$ or vertically as $b \times a$). Prove that an $m \times n$ board can be perfectly covered by $a \times b$ tiles if:
+\begin{itemize}
+    \item $m = xa + yb$ for non-negative integers $x, y \ge 0$
+    \item $a \mid n$ and $b \mid n$
+\end{itemize}
+\textit{Hint:} Split the board's length $m$ into two side-by-side sub-boards: an $(xa) \times n$ region and a $(yb) \times n$ region. Use rotated tiles ($b \times a$) on one sub-board and non-rotated tiles ($a \times b$) on the other!
+
+\textbf{Question 4} \\
+Combine your observations from Questions 1--3 to state a general rule for when an $m \times n$ board can be tiled using $a \times b$ dominoes. Why must the total area $a \cdot b$ divide $m \cdot n$?
+
+\end{document}

@@ -1,0 +1,95 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{tcolorbox}
+
+% Theorem Styles
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Integer Arithmetic Rule}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Math Club Proof Workshop: Direct Proofs \& Divisibility}} \\[4pt]
+    {\large Worksheet \& Lab Problem Set}
+\end{center}
+
+\vspace{0.5em}
+\hrule
+\vspace{1em}
+
+\section*{1. Reference Definitions \& Rules}
+
+\begin{definition}[Even]
+    An integer \(n\) is \textbf{even} if there exists an integer \(k \in \mathbb{Z}\) such that \(n = 2k\).
+\end{definition}
+
+\begin{definition}[Odd]
+    An integer \(n\) is \textbf{odd} if there exists an integer \(k \in \mathbb{Z}\) such that \(n = 2k + 1\).
+\end{definition}
+
+\begin{definition}[Divisibility]
+    For integers \(a\) and \(b\) with \(a \neq 0\), we say \(a\) \textbf{divides} \(b\) (written \(a \mid b\)) if there exists an integer \(k \in \mathbb{Z}\) such that \(b = ak\).
+\end{definition}
+
+\begin{remark}
+    The sum, difference, and product of any two integers is always an integer (closure under \(+,-,\times\)).
+\end{remark}
+
+\vspace{0.5em}
+\hrule
+\vspace{1em}
+
+\section*{2. Lecture Demo}
+
+\begin{theorem}
+    The sum of an even integer and an odd integer is an odd integer.
+\end{theorem}
+
+\vspace{0.5em}
+\hrule
+\vspace{1em}
+
+\section*{3. Proof Lab Problems}
+\textit{Note: Use separate scratch paper for non-linear discovery. Once an officer checks your logic, write your final proof in complete English prose below.}
+
+\vspace{1em}
+
+\begin{theorem}[Warmup]
+    If \(n\) is an even integer, then \(n^2 + 3n\) is an even integer.
+\end{theorem}
+
+\begin{tcolorbox}[colback=white, colframe=black!75, title=Formal Proof (Complete English Sentences)]
+\vspace{6.0cm}
+\end{tcolorbox}
+
+\newpage
+
+\begin{theorem}[Medium]
+    For all integers \(a, b,\) and \(c\), if \(a \mid b\) and \(a \mid c\), then \(a \mid (3b - 2c)\).
+\end{theorem}
+
+\begin{tcolorbox}[colback=white, colframe=black!75, title=Formal Proof (Complete English Sentences)]
+\vspace{7.0cm}
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+\begin{theorem}[Challenge]
+    If \(n\) is an odd integer, then \(n^2 - 1\) is divisible by \(8\).
+\end{theorem}
+
+\begin{tcolorbox}[colback=white, colframe=black!75, title=Formal Proof (Complete English Sentences)]
+\vspace{7.0cm}
+\end{tcolorbox}
+
+\end{document}

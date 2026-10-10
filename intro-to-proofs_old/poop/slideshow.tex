@@ -1,0 +1,99 @@
+\documentclass{beamer}
+\usetheme{metropolis} % or 'madrid', 'default'—adds clean structure
+
+\title{Definitions, Theorems, Proofs, and Proof Writing}
+\author{Math Club}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Motivation}
+  \textbf{Question:} Is the sum of two odd numbers even or odd?
+
+  \vspace{0.5em}
+  \textbf{Examples:}
+  \[
+    2 + 3 = 4 \qquad 7 + 5 = 13 \qquad 5 + 1 = 6 \qquad -3 + 1 = -2
+  \]
+  
+  \vspace{0.5em}
+  With further examples we see that the pattern holds
+  
+  \vspace{1em}
+  How can we prove this is true for \emph{all} integers without testing each case?
+\end{frame}
+
+\begin{frame}{Theorems}
+    First, we must explicitly write what we are trying to prove.
+    A \textbf{theorem} is a mathematical statement that has been proven to be true on the basis of previously established statements.
+    \vspace{0.5em}
+    \textbf{Theorem:} The sum of two odd numbers is even.
+    \vspace{0.5em}
+    However, for rigor and completeness we must know exactly what an even or odd number is. 
+\end{frame}
+
+\begin{frame}{Definitions}
+  A theorem must be based in precise and agreed upoon definitions.
+  A \textbf{definition} establishes the exact, non-negotiable meaning of a term. It is either satifised or not.
+
+  \vspace{1em}
+    Definitions are \textbf{agreed upon} as a fact rather than proven. Our theorem and proofs are then built upon these.
+\end{frame}
+
+\begin{frame}{Definitions: Parity of Integers}
+
+  \vspace{0.5em}
+  Recall the set of integers is $\mathbb{Z} = \{ \dots, -2, -1, 0, 1, 2, \dots \}$.
+
+  \vspace{0.5em}
+  \begin{block}{Definition: Even and Odd Integers}
+    Let $n \in \mathbb{Z}$.
+    \begin{itemize}
+      \item $n$ is \textbf{even} if $n = 2k$ for some integer $k \in \mathbb{Z}$.
+      \item $n$ is \textbf{odd} if $n = 2k + 1$ for some integer $k \in \mathbb{Z}$.
+    \end{itemize}
+  \end{block}
+
+  \vspace{0.5em}
+  This definition:
+  \begin{itemize}
+    \item Sets the boundary to apply only to integers
+    \item Paritions all integers into being either even or odd with no in between
+    \item Provides us with variables and mathematical expressions that can be manipulated
+  \end{itemize}
+  \vspace{0.5em}
+\end{frame}
+
+\begin{frame}{The Logic of a Direct Proof}
+  Most mathematical claims can be structured as conditional statements:
+  \[
+    P \implies Q \quad \text{``If P, then Q''}
+  \]
+
+  \begin{itemize}
+    \item \textbf{Hypothesis ($P$):} What you are given as true (e.g., \emph{``$n$ and $m$ are odd integers''}).
+    \item \textbf{Conclusion ($Q$):} What you want to deduce (e.g., \emph{``$n + m$ is an even integer''}).
+  \end{itemize}
+
+  \vspace{0.5em}
+  \textbf{The Logical Chain:}
+  A direct proof bridges $P$ to $Q$ through a sequence of valid deductions:
+  \[P \implies A_1 \implies A_2 \implies \dots \implies A_n \implies Q\]
+
+  $P$ is true by assumption, so if our logic is correct in each step, all following statements are true, thus leaving us with $Q$
+\end{frame}
+
+\begin{frame}{Scratchwork}
+    Before writing a formal proof, test your ideas and map out the logic on scratch paper.
+\vspace{0.5em}
+  \textbf{Workflow}
+  \begin{itemize}
+    \item \textbf{Unpack Definitions:} Translate the assumptions ($P$) using definitions
+    \item \textbf{Identify Target State:} Detirmine what the conclusion ($Q$) needs to look like structurally.
+    \item \textbf{Manipulate \& Connect:} Apply algebra, logic, etc to reach $Q$.
+  \end{itemize}
+\end{frame}
+
+\end{document}
