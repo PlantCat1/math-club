@@ -1,0 +1,15 @@
+Corner-removal dominoes. Remove two opposite corner squares from an $8 \times 8$ board. Can the remaining 62 squares be tiled by $1 \times 2$ dominoes?
+Four corners. Remove a $2 \times 2$ block from each of the four corners of an $8 \times 8$ board. Can the remaining 48 squares be tiled by twelve $1 \times 4$ straight tetrominoes?
+Central hole. Remove the central $2 \times 2$ block (where $x, y \in \{3, 4\}$) from an $8 \times 8$ board. Can the remaining 60 squares be tiled by fifteen $1 \times 4$ straight tetrominoes?
+Larger board. Can a $10 \times 10$ board be tiled by twenty-five $1 \times 4$ straight tetrominoes?
+T-tetrominoes. Can a $10 \times 10$ board be tiled by twenty-five T-tetrominoes?
+Mixed pieces. Can an $8 \times 8$ board be tiled by fifteen T-tetrominoes and one $2 \times 2$ square?
+Rectangles and bars. For which pairs $(m, n)$ can an $m \times n$ rectangle be tiled by $1 \times 4$ straight tetrominoes?
+Longer bars. Can a $10 \times 15$ rectangle be tiled by $1 \times 6$ bars?
+Trominoes with one hole. An $8 \times 8$ board has one square removed. For which removed squares can the remaining 63 squares be tiled by twenty-one $1 \times 3$ straight trominoes?
+Gomory's theorem. From an $8 \times 8$ board, remove one black square and one white square (any such pair). Can the remaining 62 squares always be tiled by dominoes?
+Odd board. Remove the center square from a $5 \times 5$ board. Can the remaining 24 squares be tiled by eight $1 \times 3$ straight trominoes?
+Three dimensions. Can a $6 \times 6 \times 6$ cube be completely packed with twenty-seven $1 \times 2 \times 4$ bricks?
+Knight's tour. Remove two opposite corner squares from an $8 \times 8$ board. Is there a closed knight's tour that visits each remaining square exactly once?
+Mixed dominoes and bars. Can an $8 \times 8$ board be tiled using exactly one $1 \times 4$ straight tetromino and the rest dominoes?
+Staircase. Consider the staircase shape with rows of lengths $7, 6, 5, 4, 3, 2, 1$ (28 squares). Can it be tiled by seven $1 \times 4$ straight tetrominoes?
