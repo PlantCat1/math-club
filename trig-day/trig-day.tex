@@ -27,10 +27,11 @@
 
 \begin{document}
 
-% https://facultyweb.kennesaw.edu/sellerme/docs/basictrigidentities.pdf
-% https://math.stackexchange.com/questions/145616/when-the-trig-functions-moved-from-the-right-triangle-to-the-unit-circle/145828#145828
+\section{Right Triangles and Trigonometric Ratios}
 
-\section{Foundational Definitions}
+\subsection{Similarity and Ratio Invariance}
+
+\subsection{Definitions of the Six Ratios}
 
 \begin{center}
 \begin{tikzpicture}[scale=1.2]
@@ -118,113 +119,45 @@ Let $\triangle ABC$ be a right triangle with $\angle B = 90^\circ$, and let $\th
     \end{definition}
 \end{minipage}
 
-\section{Immediate Algebraic Properties}
+\subsection{Bounds and Monotonicity}
+
+\section{Basic Identities and Pythagorean Relations}
 
 \subsection{Reciprocal Identities}
 
 \begin{identity}
     \[
-    \sin \theta = \frac{1}{\csc \theta}
+    \sin \theta = \frac{1}{\csc \theta}, \quad \csc \theta = \frac{1}{\sin \theta}
     \]
 \end{identity}
 
 \begin{identity}
     \[
-    \cos \theta = \frac{1}{\sec \theta}
+    \cos \theta = \frac{1}{\sec \theta}, \quad \sec \theta = \frac{1}{\cos \theta}
     \]
 \end{identity}
 
 \begin{identity}
     \[
-    \tan \theta = \frac{1}{\cot \theta}
-    \]
-\end{identity}
-
-\begin{identity}
-    \[
-    \csc \theta = \frac{1}{\sin \theta}
-    \]
-\end{identity}
-
-\begin{identity}
-    \[
-    \sec \theta = \frac{1}{\cos \theta}
-    \]
-\end{identity}
-
-\begin{identity}
-    \[
-    \cot \theta = \frac{1}{\tan \theta}
+    \tan \theta = \frac{1}{\cot \theta}, \quad \cot \theta = \frac{1}{\tan \theta}
     \]
 \end{identity}
 
 \subsection{Quotient Identities}
 
-\section{Cofunction Identities}
-
-\begin{definition}[Complementary Angles]
-    Two angles are \emph{complementary} if and only if the sum of their measures is equal to the measure of a right angle ($90^\circ$ or $\frac{\pi}{2}$ radians).
-
-    Formally, let $\alpha$ and $\beta$ be the measures of two angles. They are complementary if and only if: $\alpha + \beta = 90^\circ$. Either angle is referred to as the complement of the other.
-\end{definition}
-
-\begin{theorem}[Congruence of Complements]
-    If two angles are complementary to the same angle, then they are congruent to each other. Similarly, if they are complementary to two congruent angles, they are congruent.
-\end{theorem}
-\begin{proof}
-    Let angle $\alpha$ and angle $\beta$ be complementary to a common angle $\gamma$.
-
-    By the definition of complementary angles, $\alpha + \gamma = 90^\circ$ and $\beta + \gamma = 90^\circ$.
-
-    By the transitive property of equality, we have
+\begin{identity}[Tangent Identity]
     \[
-    \alpha + \gamma = \beta + \gamma.
-    \]
-    
-    Subtracting $\gamma$ from both sides yeilds
-    \[
-    \alpha = \beta.
-    \]
-    Thus, $\alpha \cong \beta$.
-\end{proof}
-% Proof:Let angle $\alpha$ and angle $\beta$ each be complementary to a common angle $\gamma$.By the definition of complementarity:$$\alpha + \gamma = 90^\circ$$$$\beta + \gamma = 90^\circ$$By the transitive property of equality:$$\alpha + \gamma = \beta + \gamma$$Subtracting $\gamma$ from both sides (Subtraction Property of Equality) yields:$$\alpha = \beta$$Thus, $\alpha \cong \beta$. Q.E.D.
-
-\begin{theorem}[Complementarity of Acute Angles in a Right Triangle]
-    The two acute angles of any right-angled triangle are complementary.
-\end{theorem}
-\begin{proof}
-    Let $\triangle ABC$ be a right triangle with $\angle B = 90^\circ$. The sum of the interior angles of any triangle is $180^\circ$. Thus,
-    \[
-    \angle A + \angle B + \angle C = 180^\circ.
-    \]
-    Substituting $\angle B = 90^\circ$, we have
-    \[
-    m(\angle A) + m(\angle B) + 90^\circ = 180^\circ
-    \]
-    Subtracting $90^\circ$ from both sides gives
-    \[
-    \angle A + \angle C = 90^\circ.
-    \]
-    By definition, since the sum of $m(\angle A)$ and $m(\angle C)$ equals $90^\circ$, $\angle A$ and $\angle C$ are complementary.
-\end{proof}
-
-
-\begin{identity}[Cofunction Identities]
-    \[
-    \sin(90^\circ - \theta) = \cos \theta, \quad \cos(90^\circ - \theta) = \sin \theta
+    \tan \theta = \frac{\sin \theta}{\cos \theta}
     \]
 \end{identity}
-\begin{proof}
-    Let $\triangle ABC$ be a right triangle with $\angle B = 90^\circ$. 
-\end{proof}
-% https://proofwiki.org/wiki/Cosine_of_Complement_equals_Sine https://proofwiki.org/wiki/Sine_of_Complement_equals_Cosine
 
-% cofunction identities
-% https://proofwiki.org/wiki/Sine_of_Complement_equals_Cosine
-% https://en.wikipedia.org/wiki/Proofs_of_trigonometric_identities#Complementary_angle_identities
-% https://www.themathpage.com/aTrig/trigonometry-of-right-triangles.htm
+\begin{identity}[Cotangent Identity]
+    \[
+    \cot \theta = \frac{\cos \theta}{\sin \theta}
+    \]
+\end{identity}
 
-\section{Pythagorean Identities}
+\subsection{Pythagorean Theorem}
 
 \begin{theorem}[Pythagorean Theorem]
     For right triangle $\triangle ABC$, the lengths of the sides satisfy:
@@ -232,6 +165,8 @@ Let $\triangle ABC$ be a right triangle with $\angle B = 90^\circ$, and let $\th
     AB^2 + BC^2 = AC^2
     \]
 \end{theorem}
+
+\subsection{Pythagorean Identity}
 
 \begin{identity}[Pythagorean Identity]
     \[
@@ -257,6 +192,8 @@ Let $\triangle ABC$ be a right triangle with $\angle B = 90^\circ$, and let $\th
     \]
 \end{proof}
 
+\subsection{Alternative Pythagorean Identities}
+
 \begin{identity}[Pythagorean Identity]
     \[
     \sec^2 \theta - \tan^2 \theta = 1
@@ -266,11 +203,7 @@ Let $\triangle ABC$ be a right triangle with $\angle B = 90^\circ$, and let $\th
     From the Pythagorean Identity, divide both sides by $\cos^2 \theta$, yielding
     \begin{align*}
         \sin^2 \theta + \cos^2 \theta = 1 &\implies \frac{\sin^2 \theta}{\cos^2 \theta} + \frac{\cos^2 \theta}{\cos^2 \theta} = \frac{1}{\cos^2 \theta} \\
-        &\implies \frac{\sin^2 \theta}{\cos^2 \theta} + 1 = \frac{1}{\cos^2 \theta}
-    \end{align*}
-    By the definitions of tangent and secant, we have
-    \begin{align*}
-        \frac{\sin^2 \theta}{\cos^2 \theta} + 1 = \frac{1}{\cos^2 \theta} &\implies \tan^2 \theta + 1 = \sec^2 \theta \\
+        &\implies \tan^2 \theta + 1 = \sec^2 \theta \\
         &\implies \sec^2 \theta - \tan^2 \theta = 1
     \end{align*}
 \end{proof}
@@ -284,16 +217,86 @@ Let $\triangle ABC$ be a right triangle with $\angle B = 90^\circ$, and let $\th
     From the Pythagorean Identity, divide both sides by $\sin^2 \theta$, yielding
     \begin{align*}
         \sin^2 \theta + \cos^2 \theta = 1 &\implies \frac{\sin^2 \theta}{\sin^2 \theta} + \frac{\cos^2 \theta}{\sin^2 \theta} = \frac{1}{\sin^2 \theta} \\
-        &\implies 1 + \frac{\cos^2 \theta}{\sin^2 \theta} = \frac{1}{\sin^2 \theta}
-    \end{align*}
-    By the definition of cotangent and cosecant, we have
-    \begin{align*}
-        1 + \frac{\cos^2 \theta}{\sin^2 \theta} = \frac{1}{\sin^2 \theta} &\implies 1 + \cot^2 \theta = \csc^2 \theta \\
+        &\implies 1 + \cot^2 \theta = \csc^2 \theta \\
         &\implies \csc^2 \theta - \cot^2 \theta = 1
     \end{align*}
 \end{proof}
 
-\section{Angle Sum and Difference}
+\section{Cofunction Relationships and Complementary Angles}
+
+\subsection{Complementary Angles}
+
+\begin{definition}[Complementary Angles]
+    Two angles are \emph{complementary} if and only if the sum of their measures is equal to the measure of a right angle ($90^\circ$ or $\frac{\pi}{2}$ radians).
+
+    Formally, let $\alpha$ and $\beta$ be the measures of two angles. They are complementary if and only if $\alpha + \beta = 90^\circ$. Either angle is referred to as the complement of the other.
+\end{definition}
+
+\begin{theorem}[Congruence of Complements]
+    If two angles are complementary to the same angle, then they are congruent to each other. Similarly, if they are complementary to two congruent angles, they are congruent.
+\end{theorem}
+\begin{proof}
+    Let angle $\alpha$ and angle $\beta$ be complementary to a common angle $\gamma$.
+
+    By the definition of complementary angles, $\alpha + \gamma = 90^\circ$ and $\beta + \gamma = 90^\circ$.
+
+    By the transitive property of equality, we have
+    \[
+    \alpha + \gamma = \beta + \gamma.
+    \]
+    
+    Subtracting $\gamma$ from both sides yields
+    \[
+    \alpha = \beta.
+    \]
+    Thus, $\alpha \cong \beta$.
+\end{proof}
+
+\begin{theorem}[Complementarity of Acute Angles in a Right Triangle]
+    The two acute angles of any right-angled triangle are complementary.
+\end{theorem}
+\begin{proof}
+    Let $\triangle ABC$ be a right triangle with $\angle B = 90^\circ$. The sum of the interior angles of any triangle is $180^\circ$. Thus,
+    \[
+    \angle A + \angle B + \angle C = 180^\circ.
+    \]
+    Substituting $\angle B = 90^\circ$, we have
+    \[
+    m(\angle A) + 90^\circ + m(\angle C) = 180^\circ
+    \]
+    Subtracting $90^\circ$ from both sides gives
+    \[
+    m(\angle A) + m(\angle C) = 90^\circ.
+    \]
+    By definition, since the sum of $m(\angle A)$ and $m(\angle C)$ equals $90^\circ$, $\angle A$ and $\angle C$ are complementary.
+\end{proof}
+
+\subsection{Cofunction Identities}
+
+\begin{identity}[Cofunction Identities]
+    \[
+    \sin(90^\circ - \theta) = \cos \theta, \quad \cos(90^\circ - \theta) = \sin \theta
+    \]
+\end{identity}
+\begin{proof}
+    proof
+\end{proof}
+
+\section{Extension to General Triangles}
+
+\subsection{Law of Sines}
+
+\subsection{Law of Cosines}
+
+\subsection{Trigonometric Area Formula}
+
+\section{Circle Geometry and Ptolemy's Theorem}
+
+\subsection{Inscribed Angles and Cyclic Polygons}
+
+\subsection{Ptolemy's Theorem}
+
+\subsection{Angle Sum and Difference Formulas}
 
 \begin{identity}
     \[
@@ -313,13 +316,38 @@ Let $\triangle ABC$ be a right triangle with $\angle B = 90^\circ$, and let $\th
     \]
 \end{identity}
 
+\section{Multi-Angle Constructions}
 
-% angle sum and difference
+\subsection{Double-Angle Identities}
 
-\section{Double-Angle Identities}
+\subsection{Power-Reducing Identities}
 
-\section{Half-Angle and Power Reducing}
+\subsection{Half-Angle Identities}
 
-\section{Even/Odd Identities}
+\subsection{Product and Sum Conversion Lemmas}
+
+\section{Classical Chord Theory}
+
+\subsection{Geometry of Chords and the Chord Function}
+
+\subsection{Equivalence of Chords and Modern Ratios}
+
+\subsection{Construction of Ancient Trigonometric Tables}
+
+\section{Triangle Centers and Cevians}
+
+\subsection{Trigonometric Ceva's Theorem}
+
+\subsection{Trigonometric Menelaus's Theorem}
+
+\subsection{Classical Centers}
+
+\section{Advanced Metric Relations}
+
+\subsection{Carnot's Theorem}
+
+\subsection{Euler's Distance Formula}
+
+\subsection{Pedal Triangles and Simson Lines}
 
 \end{document}
