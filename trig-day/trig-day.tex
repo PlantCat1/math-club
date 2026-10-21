@@ -4,7 +4,6 @@
 \usepackage{mathtools}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
-\usepackage{chessboard}
 \usepackage[margin=1.25in]{geometry}
 \usepackage{tkz-euclide}
 
@@ -286,7 +285,24 @@ Let $\triangle ABC$ be a right triangle with $\angle B = 90^\circ$, and let $\th
 
 \subsection{Law of Sines}
 
+\begin{theorem}[Law of Sines]
+    For any triangle $\triangle ABC$ with side lengths $a, b, c$ opposite to angles $\alpha, \beta, \gamma$ respectively, the ratio of the sine of an angle to its opposite side is constant and equal to the reciprocal of the circumradius diameter:
+    \[
+    \frac{a}{\sin \alpha} = \frac{b}{\sin \beta} = \frac{c}{\sin \gamma} = 2R
+    \]
+    where $R$ is the radius of the circumcircle of $\triangle ABC$.
+\end{theorem}
+
 \subsection{Law of Cosines}
+
+\begin{theorem}[Law of Cosines]
+    For any triangle $\triangle ABC$ with side lengths $a, b, c$ and corresponding opposite angles $A, B, C$:
+    \begin{align*}
+        a^2 &= b^2 + c^2 - 2bc \cos A \\
+        b^2 &= a^2 + c^2 - 2ac \cos B \\
+        c^2 &= a^2 + b^2 - 2ab \cos C
+    \end{align*}
+\end{theorem}
 
 \subsection{Trigonometric Area Formula}
 
