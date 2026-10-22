@@ -1,0 +1,6 @@
+.vscode/
+
+*.synctex
+*.synctex.gz
+*.synctex(busy)
+*.synctex.gz(busy)git
